@@ -12,7 +12,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>8D93D643-2F99-4B14-A1E3-73FD1DDEF2E1</string>
+				<string>0645067D-469B-4680-9B38-9F24255143BC</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -50,6 +50,8 @@
 			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
 				<key>argumenttype</key>
 				<integer>1</integer>
 				<key>escaping</key>
@@ -109,23 +111,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>autopaste</key>
-				<true/>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-				<key>transient</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>8D93D643-2F99-4B14-A1E3-73FD1DDEF2E1</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
@@ -154,22 +139,48 @@
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>on run argv
+  tell application "System Events"	keystroke "{query}"
+  end tell
+end run</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>0645067D-469B-4680-9B38-9F24255143BC</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
 	<key>uidata</key>
 	<dict>
+		<key>0645067D-469B-4680-9B38-9F24255143BC</key>
+		<dict>
+			<key>xpos</key>
+			<integer>660</integer>
+			<key>ypos</key>
+			<integer>240</integer>
+		</dict>
 		<key>876414D6-1A01-48C0-BB07-533300A23352</key>
 		<dict>
 			<key>xpos</key>
 			<integer>470</integer>
-			<key>ypos</key>
-			<integer>240</integer>
-		</dict>
-		<key>8D93D643-2F99-4B14-A1E3-73FD1DDEF2E1</key>
-		<dict>
-			<key>xpos</key>
-			<integer>680</integer>
 			<key>ypos</key>
 			<integer>240</integer>
 		</dict>
