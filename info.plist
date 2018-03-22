@@ -70,7 +70,7 @@
 				<string>Retrieving OATH tokens from YubiKey</string>
 				<key>script</key>
 				<string>pkill -9 scdaemon; # Release yubikey if gpg has it
-/usr/local/bin/yubioath show {query} 2&gt;/dev/null | perl -lne '
+/usr/local/bin/ykman oath code 2>/dev/null | grep -i {query} | perl -lne '
 	BEGIN {
 		$c=0;
 		print "{ \"items\": [";
