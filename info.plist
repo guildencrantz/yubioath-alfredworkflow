@@ -8,7 +8,32 @@
 	<string>Tools</string>
 	<key>connections</key>
 	<dict>
-		<key>876414D6-1A01-48C0-BB07-533300A23352</key>
+		<key>131165A8-FC09-4D82-A12B-1AA85FC9735D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0645067D-469B-4680-9B38-9F24255143BC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>554C0813-1C18-4F8D-A72A-3B9A251CA5E0</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>473EEDF5-14BC-42C2-B14E-C54482054021</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>473EEDF5-14BC-42C2-B14E-C54482054021</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
@@ -21,11 +46,63 @@
 				<false/>
 			</dict>
 		</array>
-		<key>E043A4FF-53D4-4D5B-A3E8-BE8837C947DB</key>
+		<key>56C73523-5C00-4895-BDE1-655810E0C7A2</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>876414D6-1A01-48C0-BB07-533300A23352</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>876414D6-1A01-48C0-BB07-533300A23352</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>131165A8-FC09-4D82-A12B-1AA85FC9735D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>E043A4FF-53D4-4D5B-A3E8-BE8837C947DB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>56C73523-5C00-4895-BDE1-655810E0C7A2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>ED084366-B04D-4B88-A942-D17A631503B5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>56C73523-5C00-4895-BDE1-655810E0C7A2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>F76BD862-3354-40CB-ACB0-38F923C693FD</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>56C73523-5C00-4895-BDE1-655810E0C7A2</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -48,84 +125,22 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>alfredfiltersresults</key>
-				<false/>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>keyword</key>
-				<string>oath</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string>Retrieving OATH tokens from YubiKey</string>
-				<key>script</key>
-				<string>pkill -9 scdaemon; # Release yubikey if gpg has it
-/usr/local/bin/ykman oath accounts code 2>/dev/null | grep -i {query} | perl -lne '
-	BEGIN {
-		$c=0;
-		print "{ \"items\": [";
-	};
-	{
-		if ($c &gt; 0) {
-			print ",";
-		}
-		$c++;
-		/(.+?)(\d+)$/;
-		print "{ \"title\": \"$1\", \"arg\": \"$2\" }";
-	};
-	END {
-		print "]}";
-	};
-'
-
-</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>subtext</key>
-				<string></string>
-				<key>title</key>
-				<string>Retrieve OATH tokens from YubiKey</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>876414D6-1A01-48C0-BB07-533300A23352</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
-				<integer>0</integer>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>OneLogin</string>
 				<key>focusedappvariable</key>
 				<false/>
 				<key>focusedappvariablename</key>
 				<string></string>
 				<key>hotkey</key>
-				<integer>17</integer>
+				<integer>1</integer>
 				<key>hotmod</key>
-				<integer>1310720</integer>
+				<integer>786432</integer>
 				<key>hotstring</key>
-				<string>Y</string>
+				<string>O</string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -136,7 +151,7 @@
 			<key>type</key>
 			<string>alfred.workflow.trigger.hotkey</string>
 			<key>uid</key>
-			<string>E043A4FF-53D4-4D5B-A3E8-BE8837C947DB</string>
+			<string>ED084366-B04D-4B88-A942-D17A631503B5</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -166,6 +181,180 @@ end run</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Retrieving OATH tokens from YubiKey</string>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>oath.scriptfilter.sh</string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Retrieve OATH tokens from YubiKey</string>
+				<key>type</key>
+				<integer>8</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>876414D6-1A01-48C0-BB07-533300A23352</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>oath</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string></string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>F76BD862-3354-40CB-ACB0-38F923C693FD</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string></string>
+						<key>matchcasesensitive</key>
+						<true/>
+						<key>matchmode</key>
+						<integer>4</integer>
+						<key>matchstring</key>
+						<string>\d+</string>
+						<key>outputlabel</key>
+						<string>code</string>
+						<key>uid</key>
+						<string>554C0813-1C18-4F8D-A72A-3B9A251CA5E0</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>Get Touch</string>
+				<key>hideelse</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>131165A8-FC09-4D82-A12B-1AA85FC9735D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>passthroughargument</key>
+				<true/>
+				<key>variables</key>
+				<dict>
+					<key>YK_SERIAL</key>
+					<string>{var:yk_serial}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>56C73523-5C00-4895-BDE1-655810E0C7A2</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>touch.swift</string>
+				<key>type</key>
+				<integer>8</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>473EEDF5-14BC-42C2-B14E-C54482054021</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>17</integer>
+				<key>hotmod</key>
+				<integer>786432</integer>
+				<key>hotstring</key>
+				<string>Y</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>E043A4FF-53D4-4D5B-A3E8-BE8837C947DB</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
@@ -174,25 +363,88 @@ end run</string>
 		<key>0645067D-469B-4680-9B38-9F24255143BC</key>
 		<dict>
 			<key>xpos</key>
-			<integer>660</integer>
+			<real>970</real>
 			<key>ypos</key>
-			<integer>240</integer>
+			<real>150</real>
+		</dict>
+		<key>131165A8-FC09-4D82-A12B-1AA85FC9735D</key>
+		<dict>
+			<key>xpos</key>
+			<real>615</real>
+			<key>ypos</key>
+			<real>185</real>
+		</dict>
+		<key>473EEDF5-14BC-42C2-B14E-C54482054021</key>
+		<dict>
+			<key>xpos</key>
+			<real>765</real>
+			<key>ypos</key>
+			<real>245</real>
+		</dict>
+		<key>56C73523-5C00-4895-BDE1-655810E0C7A2</key>
+		<dict>
+			<key>note</key>
+			<string>Configure workflow to set yk_serial if you have multiple yubikeys</string>
+			<key>xpos</key>
+			<real>340</real>
+			<key>ypos</key>
+			<real>195</real>
 		</dict>
 		<key>876414D6-1A01-48C0-BB07-533300A23352</key>
 		<dict>
 			<key>xpos</key>
-			<integer>470</integer>
+			<real>445</real>
 			<key>ypos</key>
-			<integer>240</integer>
+			<real>165</real>
 		</dict>
 		<key>E043A4FF-53D4-4D5B-A3E8-BE8837C947DB</key>
 		<dict>
 			<key>xpos</key>
-			<integer>290</integer>
+			<real>110</real>
 			<key>ypos</key>
-			<integer>240</integer>
+			<real>295</real>
+		</dict>
+		<key>ED084366-B04D-4B88-A942-D17A631503B5</key>
+		<dict>
+			<key>xpos</key>
+			<real>110</real>
+			<key>ypos</key>
+			<real>35</real>
+		</dict>
+		<key>F76BD862-3354-40CB-ACB0-38F923C693FD</key>
+		<dict>
+			<key>xpos</key>
+			<real>100</real>
+			<key>ypos</key>
+			<real>165</real>
 		</dict>
 	</dict>
+	<key>userconfigurationconfig</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string></string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>If you have more than one yubikey specify the serial number of the key to use (ref: `ykman list`)</string>
+			<key>label</key>
+			<string>Yubikey Serial</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>yk_serial</string>
+		</dict>
+	</array>
+	<key>version</key>
+	<string></string>
 	<key>webaddress</key>
 	<string></string>
 </dict>
