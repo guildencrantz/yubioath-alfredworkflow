@@ -1,0 +1,28 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Build Alfred workflow
+        id: builder
+        uses: almibarss/build-alfred-workflow@main
+        with:
+          workflow_dir: .
+          exclude_patterns: .git/* .github/*
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: ${{ steps.builder.outputs.workflow_file }}
