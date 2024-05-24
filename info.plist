@@ -211,7 +211,7 @@ end run</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
-				<string>oath.scriptfilter.sh</string>
+				<string>scriptfilter.swift</string>
 				<key>subtext</key>
 				<string></string>
 				<key>title</key>
@@ -264,7 +264,7 @@ end run</string>
 						<key>matchstring</key>
 						<string>\d+</string>
 						<key>outputlabel</key>
-						<string>code</string>
+						<string>Have code</string>
 						<key>uid</key>
 						<string>554C0813-1C18-4F8D-A72A-3B9A251CA5E0</string>
 					</dict>
@@ -376,6 +376,8 @@ end run</string>
 		</dict>
 		<key>473EEDF5-14BC-42C2-B14E-C54482054021</key>
 		<dict>
+			<key>note</key>
+			<string>Prompt for YubiKey touch</string>
 			<key>xpos</key>
 			<real>765</real>
 			<key>ypos</key>
@@ -407,7 +409,7 @@ end run</string>
 		<key>ED084366-B04D-4B88-A942-D17A631503B5</key>
 		<dict>
 			<key>xpos</key>
-			<real>110</real>
+			<real>105</real>
 			<key>ypos</key>
 			<real>35</real>
 		</dict>

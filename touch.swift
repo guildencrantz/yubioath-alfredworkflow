@@ -45,7 +45,6 @@ func ykman(proc: Process, query: String = "") async -> String {
     let data = pipe.fileHandleForReading.readDataToEndOfFile()
     let out = String(data: data, encoding: String.Encoding.utf8) ?? ""
     return out.components(separatedBy: .whitespacesAndNewlines).compactMap { $0.isEmpty ? nil : $0 }[1]
-    fputs("ykman exited\n", stderr)
 }
 
 let query = CommandLine.arguments[1...].joined(separator: " ")
@@ -65,10 +64,18 @@ Task {
     semaphore.signal()
 }
 
-semaphore.wait()
+// timeout after 1 minute
+fputs("waiting for alert or ykman\n", stderr)
+do {
+    semaphore.wait(timeout: .now() + 60)
+} catch {
+    fputs("timed out\n", stderr)
+}
+fputs("waited: \(wait)", stderr)
 
 if alert.isRunning {
     alert.terminate()
-} else if ykman.isRunning {
+}
+if ykman.isRunning {
     ykman.terminate()
 }
